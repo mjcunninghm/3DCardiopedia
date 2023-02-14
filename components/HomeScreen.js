@@ -8,11 +8,6 @@ import {
   Button,
   Image,
 } from 'react-native';
-import {Picker} from '@react-native-picker/picker';
-import {Fragment} from 'react';
-
-const Dev_Height = Dimensions.get('screen').height;
-const Dev_Width = Dimensions.get('screen').width;
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -48,7 +43,7 @@ export default class HomeScreen extends React.Component {
           </View>
           {/*Sets welcome description space*/}
           <View style={{flex: 1, alignItems: 'center'}}>
-            <Text style={{textAlign: 'center'}}>
+            <Text style={{textAlign: 'center', color: 'black'}}>
               3D Cardiopedia aims to provide the most anatomically accurate
               depictions of congenital heart disease at the touch of your
               fingers.
@@ -61,11 +56,11 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.portalText}>Patient Portal</Text>
           </View>
           {/*Sets description space*/}
-          <View style={{flex: 5, paddingTop: 2, paddingBottom: 2}}>
-            <Text>Patient portal description</Text>
+          <View style={{flex: 5, paddingBottom: 1}}>
+            <Text style={{color: 'black'}}>Patient portal description</Text>
           </View>
           {/*Sets button space*/}
-          <View style={{flex: 3}}>
+          <View style={{flex: 2}}>
             <Button
               title="Go to patient portal"
               onPress={() => this.props.navigation.navigate('PatientPortal')}
@@ -78,31 +73,14 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.portalText}>Library</Text>
           </View>
           {/*Sets description space*/}
-          <View style={{flex: 5, paddingTop: 2, paddingBottom: 2}}>
-            <Text>Library description</Text>
+          <View style={{flex: 5, paddingBottom: 1}}>
+            <Text style={{color: 'black'}}>Library description</Text>
           </View>
           {/*Sets button space*/}
-          <View style={{flex: 3}}>
+          <View style={{flex: 2}}>
             <Button
               title="Go to library"
               onPress={() => this.props.navigation.navigate('Library')}
-            />
-          </View>
-        </View>
-        <View style={styles.gray}>
-          {/*Sets header space*/}
-          <View style={{flex: 2}}>
-            <Text style={styles.portalText}>Care Team Portal</Text>
-          </View>
-          {/*Sets description space*/}
-          <View style={{flex: 5, paddingTop: 2, paddingBottom: 2}}>
-            <Text>Care team portal description</Text>
-          </View>
-          {/*Sets button space*/}
-          <View style={{flex: 3}}>
-            <Button
-              title="Go to care team portal"
-              onPress={() => this.props.navigation.navigate('CareTeamPortal')}
             />
           </View>
         </View>
@@ -130,7 +108,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 10,
-    flex: 24,
+    flex: 36,
     flexDirection: 'column',
     backgroundColor: '#ffffff',
   },
@@ -139,7 +117,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 10,
-    flex: 24,
+    flex: 36,
     flexDirection: 'column',
     backgroundColor: '#d9d9d9',
   },
