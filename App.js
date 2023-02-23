@@ -7,6 +7,7 @@ import HomeScreen from './components/HomeScreen.js';
 import PatientPortal from './components/PatientPortal/PatientPortal.js';
 import CareTeamPortal from './components/CareTeamPortal.js';
 import Library from './components/Library.js';
+import ModelView from './components/view3D';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,10 +34,34 @@ export default function App() {
           tabBarActiveTintColor: '#2227ff',
           tabBarInactiveTintColor: 'gray',
         })}>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Patient Portal" component={PatientPortal} />
-        <Tab.Screen name="Care Team Portal" component={CareTeamPortal} />
-        <Tab.Screen name="Library" component={Library} />
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name="Patient Portal"
+          component={PatientPortal}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name="Care Team Portal"
+          component={CareTeamPortal}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name="Library"
+          component={Library}
+          options={{
+            headerShown: false,
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
