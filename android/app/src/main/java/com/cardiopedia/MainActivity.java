@@ -1,4 +1,5 @@
 package com.cardiopedia;
+import expo.modules.ReactActivityDelegateWrapper;
 import android.os.Bundle;
 
 import com.facebook.react.ReactActivity;
