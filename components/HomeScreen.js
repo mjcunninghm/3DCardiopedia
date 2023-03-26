@@ -9,6 +9,9 @@ import {
   Image,
 } from 'react-native';
 
+const Dev_Height = Dimensions.get('screen').height;
+const Dev_Width = Dimensions.get('screen').width;
+
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +22,15 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.header}>
+          <Image
+            style={{
+              width: Dev_Width,
+              height: 100,
+            }}
+            source={require('Cardiopedia\\header.png')}
+          />
+        </View>
         <View style={styles.welcome}>
           {/*Sets logo/welcome space*/}
           <View style={{flex: 2}}>
@@ -57,13 +69,18 @@ export default class HomeScreen extends React.Component {
           </View>
           {/*Sets description space*/}
           <View style={{flex: 5, paddingBottom: 1}}>
-            <Text style={{color: 'black'}}>Patient portal description</Text>
+            <Text style={{color: 'black'}}>
+              An effective interface to visualize and understand patient
+              specific congenital heart disease in a 3D model. Patients can
+              login using their given credentials supplied by the hospital to
+              begin viewing.
+            </Text>
           </View>
           {/*Sets button space*/}
           <View style={{flex: 2}}>
             <Button
               title="Go to patient portal"
-              onPress={() => this.props.navigation.navigate('PatientPortal')}
+              onPress={() => this.props.navigation.navigate('Patient Portal')}
             />
           </View>
         </View>
@@ -74,7 +91,13 @@ export default class HomeScreen extends React.Component {
           </View>
           {/*Sets description space*/}
           <View style={{flex: 5, paddingBottom: 1}}>
-            <Text style={{color: 'black'}}>Library description</Text>
+            <Text style={{color: 'black'}}>
+              Comprehensive database with interactive 3D heart models made from
+              real patient data for [insert number here] different types of
+              congenital heart diseases. Serves as an education tool through
+              inclusion of detailed descriptions and supplemental resources for
+              each defect.
+            </Text>
           </View>
           {/*Sets button space*/}
           <View style={{flex: 2}}>
@@ -94,12 +117,15 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
+  header: {
+    flex: 15,
+  },
   welcome: {
     paddingTop: 10,
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 10,
-    flex: 28,
+    flex: 25,
     flexDirection: 'column',
     backgroundColor: '#ffffff',
   },
@@ -108,7 +134,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 10,
-    flex: 36,
+    flex: 33,
     flexDirection: 'column',
     backgroundColor: '#ffffff',
   },
@@ -117,7 +143,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     paddingBottom: 10,
-    flex: 36,
+    flex: 27,
     flexDirection: 'column',
     backgroundColor: '#d9d9d9',
   },

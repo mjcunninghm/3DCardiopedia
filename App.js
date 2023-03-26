@@ -9,7 +9,6 @@ import PatientPortal from './components/PatientPortal.js';
 import CareTeamPortal from './components/CareTeamPortal.js';
 import Library from './components/Library.js';
 import ModelScreen from './components/ModelScreen';
-import ModelView from './components/view3D';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -51,15 +50,15 @@ function Tabs() {
         }}
       />
       <Tab.Screen
-        name="Care Team Portal"
-        component={CareTeamPortal}
+        name="Library"
+        component={Library}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name="Library"
-        component={Library}
+        name="Care Team Portal"
+        component={CareTeamPortal}
         options={{
           headerShown: false,
         }}
