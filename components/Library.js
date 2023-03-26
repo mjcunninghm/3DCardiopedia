@@ -1,20 +1,11 @@
 import * as React from 'react';
 import {
   View,
-  Button,
-  Text,
   SafeAreaView,
   StyleSheet,
   Dimensions,
-  ImageBackground,
-  Image,
-  FlatList,
-  StatusBar,
-  TouchableOpacity,
-  TextInput,
-  ScrollView,
-  RefreshControl,
 } from 'react-native';
+import {Model} from './ModView';
 
 const Dev_Height = Dimensions.get('screen').height;
 const Dev_Width = Dimensions.get('screen').width;
@@ -27,10 +18,7 @@ export default class Library extends React.Component {
     return (
       <SafeAreaView styles={styles.container}>
         <View>
-          <Button
-            title="Go to home screen"
-            onPress={() => this.props.navigation.navigate('HomeScreen')}
-          />
+          <Model />
         </View>
       </SafeAreaView>
     );
