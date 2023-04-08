@@ -8,6 +8,7 @@ import {
   TextInput,
   Button,
 } from 'react-native';
+import {LOGO, HEADER} from '../images.js';
 
 const Dev_Width = Dimensions.get('screen').width;
 
@@ -28,7 +29,7 @@ export default class CareTeamPortal extends React.Component {
               width: Dev_Width,
               height: 100,
             }}
-            source={require('Cardiopedia\\header.png')}
+            source={HEADER}
           />
         </View>
         <View style={styles.body}>
@@ -66,7 +67,7 @@ export default class CareTeamPortal extends React.Component {
               height: 90,
               marginTop: 30,
             }}
-            source={require('Cardiopedia\\logo-circle.png')}
+            source={LOGO}
           />
         </View>
       </View>

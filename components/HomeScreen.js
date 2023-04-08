@@ -8,8 +8,8 @@ import {
   Button,
   Image,
 } from 'react-native';
+import {LOGO, HEADER} from '../images.js';
 
-const Dev_Height = Dimensions.get('screen').height;
 const Dev_Width = Dimensions.get('screen').width;
 
 export default class HomeScreen extends React.Component {
@@ -28,7 +28,7 @@ export default class HomeScreen extends React.Component {
               width: Dev_Width,
               height: 100,
             }}
-            source={require('Cardiopedia\\header.png')}
+            source={HEADER}
           />
         </View>
         <View style={styles.welcome}>
@@ -42,7 +42,7 @@ export default class HomeScreen extends React.Component {
                     width: 90,
                     height: 90,
                   }}
-                  source={require('Cardiopedia\\logo-circle.png')}
+                  source={LOGO}
                 />
               </View>
               {/*Sets welcome space*/}

@@ -5,8 +5,7 @@ import {
   Dimensions,
   Image,
 } from 'react-native';
-
-const Dev_Width = Dimensions.get('screen').width;
+import {LOGO} from '../images.js';
 
 export default class ModelScreen extends React.Component {
   constructor(props) {
@@ -22,7 +21,7 @@ export default class ModelScreen extends React.Component {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          source={require('Cardiopedia\\logo-circle.png')}
+          source={LOGO}
         />
       </View>
     );

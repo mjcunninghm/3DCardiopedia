@@ -4,8 +4,12 @@ import {
   SafeAreaView,
   StyleSheet,
   Dimensions,
+  Text,
+  Button,
 } from 'react-native';
-import {Model} from './ModView';
+import {Model} from './ModView.js';
+import {Canvas} from '@react-three/fiber/native';
+import {Suspense} from 'react';
 
 const Dev_Height = Dimensions.get('screen').height;
 const Dev_Width = Dimensions.get('screen').width;
@@ -16,11 +20,18 @@ export default class Library extends React.Component {
   }
   render() {
     return (
-      <SafeAreaView styles={styles.container}>
-        <View>
-          <Model />
-        </View>
-      </SafeAreaView>
+      <View style={styles.container}>
+        <Canvas
+          style={{
+            width: Dev_Width,
+            height: Dev_Height,
+            alignItems: 'center',
+          }}>
+          <Suspense fallback={null}>
+            <Model />
+          </Suspense>
+        </Canvas>
+      </View>
     );
   }
 }
@@ -31,6 +42,5 @@ const styles = StyleSheet.create({
     width: Dev_Width,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#222222',
   },
 });

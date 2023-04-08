@@ -22,6 +22,8 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 target 'Cardiopedia' do
   use_expo_modules!
   post_integrate do |installer|
