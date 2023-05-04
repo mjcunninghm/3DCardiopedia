@@ -1,13 +1,10 @@
+/*
+Sets the user interface for the model viewing screen.
+ */
+
 import * as React from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Image,
-  Text,
-  TextInput,
-} from 'react-native';
-import {HEADER, LOGO} from '../images.js';
+import {View, StyleSheet, Dimensions, Image, Text} from 'react-native';
+import {LOGO} from '../images.js';
 const Dev_Width = Dimensions.get('screen').width;
 const Dev_Height = Dimensions.get('screen').height;
 const Dev_font = Dimensions.get('screen').fontScale;

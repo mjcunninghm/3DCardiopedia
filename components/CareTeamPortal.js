@@ -1,3 +1,7 @@
+/*
+Sets the user interface for the care team portal.
+ */
+
 import * as React from 'react';
 import {
   View,

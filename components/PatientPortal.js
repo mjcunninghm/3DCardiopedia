@@ -1,3 +1,7 @@
+/*
+Sets the user interface for the patient portal.
+ */
+
 import * as React from 'react';
 import {
   View,

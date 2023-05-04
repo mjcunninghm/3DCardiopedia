@@ -1,13 +1,13 @@
+/*
+Returns a flat list for the patient and generic library. Takes in either
+patient or model as a parameter, respectively.
+ */
+
 import {useState} from 'react';
 import {Dev_Height, Dev_Width, Dev_font} from './Library';
 import {
-  View,
-  SafeAreaView,
   StyleSheet,
-  Dimensions,
   Text,
-  Button,
-  Image,
   FlatList,
   TouchableOpacity,
 } from 'react-native';

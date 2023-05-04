@@ -1,3 +1,8 @@
+/*
+Controller for the application. This file contains navigation routes and
+generic appearances for the pages.
+ */
+
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';

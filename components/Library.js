@@ -1,16 +1,15 @@
+/*
+Sets the user interface for the generic library.
+ */
+
 import * as React from 'react';
-import {useState} from 'react';
 import {
   View,
-  SafeAreaView,
   StyleSheet,
   Dimensions,
-  Text,
-  Button,
   Image,
-  FlatList,
 } from 'react-native';
-import {HEADER, LOGO} from '../images';
+import {HEADER} from '../images';
 import {Models} from './Models';
 
 // Find screen dimensions
