@@ -18,23 +18,14 @@ export const Dev_Width = Dimensions.get('screen').width;
 export const Dev_Height = Dimensions.get('screen').height;
 export const Dev_font = Dimensions.get('screen').fontScale;
 
-export default class Library extends React.Component {
+export default class PatientLibrary extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Image
-            style={{
-              width: Dev_Width,
-              height: Dev_Height * 0.125,
-            }}
-            source={HEADER}
-          />
-        </View>
-        <Models screen={'Model'} />
+        <Models screen={'Patient'} />
       </View>
     );
   }

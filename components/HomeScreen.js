@@ -10,7 +10,9 @@ import {
 } from 'react-native';
 import {LOGO, HEADER} from '../images.js';
 
-const Dev_Width = Dimensions.get('screen').width;
+export const Dev_Width = Dimensions.get('screen').width;
+export const Dev_Height = Dimensions.get('screen').height;
+export const Dev_font = Dimensions.get('screen').fontScale;
 
 export default class HomeScreen extends React.Component {
   constructor(props) {
@@ -26,27 +28,32 @@ export default class HomeScreen extends React.Component {
           <Image
             style={{
               width: Dev_Width,
-              height: 100,
+              height: Dev_Height * 0.125,
             }}
             source={HEADER}
           />
         </View>
         <View style={styles.welcome}>
           {/*Sets logo/welcome space*/}
-          <View style={{flex: 2}}>
+          <View style={{flex: 1}}>
             <View style={{flexDirection: 'row'}}>
               {/*Sets logo space*/}
               <View style={{flex: 1}}>
                 <Image
                   style={{
-                    width: 90,
-                    height: 90,
+                    width: Dev_Height * 0.09,
+                    height: Dev_Height * 0.09,
                   }}
                   source={LOGO}
                 />
               </View>
               {/*Sets welcome space*/}
-              <View style={{flex: 3, alignItems: 'center', paddingTop: 5}}>
+              <View
+                style={{
+                  flex: 3,
+                  alignItems: 'center',
+                  paddingTop: Dev_Height * 0.005,
+                }}>
                 <Text style={styles.welcomeText}>
                   Welcome to 3D Cardiopedia!
                 </Text>
@@ -54,8 +61,13 @@ export default class HomeScreen extends React.Component {
             </View>
           </View>
           {/*Sets welcome description space*/}
-          <View style={{flex: 1, alignItems: 'center'}}>
-            <Text style={{textAlign: 'center', color: 'black'}}>
+          <View style={{flex: 1, alignItems: 'center', paddingTop: Dev_Height * 0.04 }}>
+            <Text
+              style={{
+                textAlign: 'center',
+                color: 'black',
+                fontSize: 13 * Dev_font,
+              }}>
               3D Cardiopedia aims to provide the most anatomically accurate
               depictions of congenital heart disease at the touch of your
               fingers.
@@ -68,8 +80,8 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.portalText}>Patient Portal</Text>
           </View>
           {/*Sets description space*/}
-          <View style={{flex: 5, paddingBottom: 1}}>
-            <Text style={{color: 'black'}}>
+          <View style={{flex: 4}}>
+            <Text style={{color: 'black', fontSize: 12 * Dev_font}}>
               An effective interface to visualize and understand patient
               specific congenital heart disease in a 3D model. Patients can
               login using their given credentials supplied by the hospital to
@@ -77,7 +89,7 @@ export default class HomeScreen extends React.Component {
             </Text>
           </View>
           {/*Sets button space*/}
-          <View style={{flex: 2}}>
+          <View style={{flex: 2.5}}>
             <Button
               title="Go to patient portal"
               onPress={() => this.props.navigation.navigate('Patient Portal')}
@@ -90,8 +102,8 @@ export default class HomeScreen extends React.Component {
             <Text style={styles.portalText}>Library</Text>
           </View>
           {/*Sets description space*/}
-          <View style={{flex: 5, paddingBottom: 1}}>
-            <Text style={{color: 'black'}}>
+          <View style={{flex: 5, paddingBottom: Dev_Height * 0.001}}>
+            <Text style={{color: 'black', fontSize: 12 * Dev_font}}>
               Comprehensive database with interactive 3D heart models made from
               real patient data for [insert number here] different types of
               congenital heart diseases. Serves as an education tool through
@@ -100,10 +112,30 @@ export default class HomeScreen extends React.Component {
             </Text>
           </View>
           {/*Sets button space*/}
-          <View style={{flex: 2}}>
+          <View style={{flex: 2.5}}>
             <Button
               title="Go to library"
               onPress={() => this.props.navigation.navigate('Library')}
+            />
+          </View>
+        </View>
+        <View style={styles.care}>
+          <View style={{flex: 2}}>
+            <Text style={styles.portalText}>Care Team Portal</Text>
+          </View>
+          {/*Sets description space*/}
+          <View style={{flex: 4}}>
+            <Text style={{color: 'black', fontSize: 12 * Dev_font}}>
+              An effective interface to upload and manage patient specific 3D
+              congenital heart disease models. Care team members can login using
+              their given credentials supplied by the hospital.
+            </Text>
+          </View>
+          {/*Sets button space*/}
+          <View style={{flex: 2.5}}>
+            <Button
+              title="Go to care team portal"
+              onPress={() => this.props.navigation.navigate('Care Team Portal')}
             />
           </View>
         </View>
@@ -121,40 +153,49 @@ const styles = StyleSheet.create({
     flex: 15,
   },
   welcome: {
-    paddingTop: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 10,
-    flex: 25,
+    paddingTop: Dev_Height * 0.01,
+    paddingLeft: Dev_Width * 0.045,
+    paddingRight: Dev_Width * 0.045,
+    paddingBottom: Dev_Height * 0.01,
+    flex: 22,
     flexDirection: 'column',
     backgroundColor: '#ffffff',
   },
   white: {
-    paddingTop: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 10,
-    flex: 33,
+    paddingTop: Dev_Height * 0.01,
+    paddingLeft: Dev_Width * 0.045,
+    paddingRight: Dev_Width * 0.045,
+    paddingBottom: Dev_Height * 0.01,
+    flex: 25,
     flexDirection: 'column',
     backgroundColor: '#ffffff',
   },
   gray: {
-    paddingTop: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 10,
-    flex: 27,
+    paddingTop: Dev_Height * 0.01,
+    paddingLeft: Dev_Width * 0.045,
+    paddingRight: Dev_Width * 0.045,
+    paddingBottom: Dev_Height * 0.01,
+    flex: 20,
+    flexDirection: 'column',
+    backgroundColor: '#d9d9d9',
+  },
+  care: {
+    paddingTop: Dev_Height * 0.01,
+    paddingLeft: Dev_Width * 0.045,
+    paddingRight: Dev_Width * 0.045,
+    paddingBottom: Dev_Height * 0.01,
+    flex: 22,
     flexDirection: 'column',
     backgroundColor: '#d9d9d9',
   },
   welcomeText: {
-    fontSize: 30,
+    fontSize: 25 * Dev_font,
     fontWeight: 'bold',
     color: 'black',
     textAlign: 'center',
   },
   portalText: {
-    fontSize: 25,
+    fontSize: 20 * Dev_font,
     fontWeight: 'bold',
     color: 'black',
     textAlign: 'left',

@@ -9,6 +9,7 @@ import PatientPortal from './components/PatientPortal.js';
 import CareTeamPortal from './components/CareTeamPortal.js';
 import Library from './components/Library.js';
 import ModelScreen from './components/ModelScreen';
+import PatientLibrary from './components/PatientLibrary';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -81,6 +82,10 @@ export default function App() {
         <Stack.Screen
           name="Model Screen"
           component={ModelScreen}
+        />
+        <Stack.Screen
+          name="Patient Library"
+          component={PatientLibrary}
         />
       </Stack.Navigator>
     </NavigationContainer>

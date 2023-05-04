@@ -10,7 +10,9 @@ import {
 } from 'react-native';
 import {LOGO, HEADER} from '../images.js';
 
-const Dev_Width = Dimensions.get('screen').width;
+export const Dev_Width = Dimensions.get('screen').width;
+export const Dev_Height = Dimensions.get('screen').height;
+export const Dev_font = Dimensions.get('screen').fontScale;
 
 export default class PatientPortal extends React.Component {
   constructor(props) {
@@ -27,7 +29,7 @@ export default class PatientPortal extends React.Component {
           <Image
             style={{
               width: Dev_Width,
-              height: 100,
+              height: Dev_Height * 0.125,
             }}
             source={HEADER}
           />
@@ -66,9 +68,9 @@ export default class PatientPortal extends React.Component {
           />
           <Image
             style={{
-              width: 90,
-              height: 90,
-              marginTop: 30,
+              width: Dev_Height * 0.1,
+              height: Dev_Height * 0.1,
+              marginTop: Dev_Height * 0.03,
             }}
             source={LOGO}
           />
@@ -87,33 +89,33 @@ const styles = StyleSheet.create({
     flex: 15,
   },
   body: {
-    paddingTop: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 10,
+    paddingTop: Dev_Height * 0.01,
+    paddingLeft: Dev_Width * 0.045,
+    paddingRight: Dev_Width * 0.045,
+    paddingBottom: Dev_Height * 0.01,
     flex: 92,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#ffffff',
   },
   headerText: {
-    fontSize: 30,
+    fontSize: 30 * Dev_font,
     fontWeight: 'bold',
     color: 'black',
     textAlign: 'center',
   },
   prompt: {
-    fontSize: 25,
+    fontSize: 25 * Dev_font,
     fontWeight: 'bold',
     color: 'black',
-    paddingTop: 40,
+    paddingTop: Dev_Height * 0.04,
   },
   input: {
-    height: 40,
-    width: 200,
-    marginTop: 5,
-    marginBottom: 10,
+    height: Dev_Height * 0.04,
+    width: Dev_Width * 0.5,
+    marginTop: Dev_Height * 0.005,
+    marginBottom: Dev_Height * 0.015,
     borderWidth: 1,
-    padding: 10,
+    padding: Dev_Height * 0.01,
   },
 });
