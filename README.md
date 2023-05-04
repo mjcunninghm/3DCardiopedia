@@ -1,3 +1,9 @@
+# Overview
+
+The code in this repo controls the user interface for a mobile application named 3D Cardiopedia. There are currently 3 main moduli: Patient Portal, Care Team Portal, and a Library. The Patient Portal is designed for patients to view their own models. The CT Portal is meant for care team members to view any patient's model. The library is a general use library filled with models. This app is in conjuction with members of the UIHC pediactric cardiology unit.
+
+In its current state, model viewing is not available in the app. Model viewing is available in a React based client. See https://github.com/mjcunninghm/3DC-model-view.git for more.
+
 # Setting Up on Local Computer
 
 First, you must set up the React Native Environment. Documentation can be found at: https://reactnative.dev/docs/environment-setup
